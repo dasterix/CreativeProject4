@@ -1,0 +1,25 @@
+{
+  "name": "lab-4-dasterix",
+  "version": "1.0.0",
+  "description": "Lab 4",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BYU-CS-260-Winter-2019/lab-4-dasterix.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BYU-CS-260-Winter-2019/lab-4-dasterix/issues"
+  },
+  "homepage": "https://github.com/BYU-CS-260-Winter-2019/lab-4-dasterix#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19",
+    "multer": "^1.4.1"
+  }
+}
