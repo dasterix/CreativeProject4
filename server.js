@@ -30,6 +30,9 @@ const itemSchema = new mongoose.Schema({
   title: String,
   path: String,
   description: String,
+  sumRating: Number,
+  numRating: Number,
+  avgRating: Number
 });
 
 // Create a model for items in the museum.
@@ -41,6 +44,9 @@ app.post('/api/items', async (req, res) => {
     title: req.body.title,
     path: req.body.path,
     description: req.body.description,
+    sumRating: req.body.sumRating,
+    numRating: req.body.numRating, 
+    avgRating: req.body.avgRating
   });
   try {
     await item.save();
@@ -98,6 +104,10 @@ app.put('/api/items/:id', async(req, res) =>
     });
     //console.log("Stage 2: item found or not found: "+ item);
     item.title = req.body.title;
+    item.numRating = req.body.numRating;
+    item.sumRating = req.body.sumRating;
+    item.avgRating = req.body.avgRating;
+    
     await item.save()
     res.send(item);
   } catch (error) {

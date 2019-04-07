@@ -34,7 +34,10 @@ var app = new Vue({
         let r2 = await axios.post('/api/items', {
           title: this.title,
           path: r1.data.path,
-          description: this.description
+          description: this.description,
+          sumRating : 0,
+          numRating : 0,
+          avgRating: 0
         });
         this.addItem = r2.data;
         this.getItems();
@@ -73,6 +76,9 @@ var app = new Vue({
       try {
         let response = await axios.put("/api/items/" + item._id, {
           title: this.findItem.title,
+          numRating: this.findItem.numRating,
+          sumRating: this.findItem.sumRating,
+          avgRating: this.findItem.avgRating
         });
         this.findItem = null;
         this.getItems();

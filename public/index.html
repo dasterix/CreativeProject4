@@ -4,17 +4,16 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
-  <title>Museum of Ordinary Objects</title>
+  <title>Favorite Kid's TV Shows</title>
 </head>
 
 <body>
   <div class="header">
     <div class="logo">
-      <img src="/images/ordinary.png">
+      <img src="/images/logo.svg">
     </div>
     <div class="title">
-      <h2>CS 260</h2>
-      <h1>Museum of Ordinary Objects</h1>
+      <h1>Favorite Kid's TV Shows!</h1>
     </div>
   </div>
   <div id="app" class="content">
@@ -23,13 +22,21 @@
         <h2>{{item.title}}</h2>
         <img :src="item.path" />
         <p><em>{{item.description}}</em></p>
+        <star-rating @rating-selected ="setRating($event, item)" v-bind:indment=0.5></star-rating >
+          <p><i>Average Rating: {{item.avgRating}}</i></p>
       </div>
   </div>
   <div class="footer">
-    <a href="/admin.html">Admin</a>
+    <p>Admin Tools: <a href="/admin.html">Admin</a></p>
+    <p>GitHub: <a href="https://github.com/BYU-CS-260-Winter-2019/CreativeProject4">Click Here For Github</a></p>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+  <!-- More Stuff I added for Better Looks-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
   <script src="/script.js"></script>
 </body>
 
